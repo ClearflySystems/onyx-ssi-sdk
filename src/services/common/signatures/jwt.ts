@@ -65,7 +65,7 @@ export class JWTService implements SignatureService {
      */
     convertKeys(keys: DIDWithKeys): Issuer {
         const pk = keys.keyPair.privateKey
-        const key = isString(pk) ? hexToBytes(pk.substring(2)): pk
+        const key = isString(pk) ? hexToBytes(pk): pk
         let signer
         switch(keys.keyPair.algorithm) {
             case KEY_ALG.ES256K: {
